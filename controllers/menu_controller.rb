@@ -9,10 +9,9 @@ class MenuController
 	end
 
 	def main_menu
-# #2
-		puts "Main Menu - #{@address_book.entries.count} entries"
+		puts "Main Menu = #{@address_book.entries.count} entries"
 		puts "1 - View all entries"
-		puts "2 - Create an entry"
+		puts "2 = Create an entry"
 		puts "3 - Search for an entry"
 		puts "4 - Import entries from a CSV"
 		puts "5 - Exit"
@@ -100,18 +99,23 @@ class MenuController
 		selection = gets.chomp
 
 		case selection
-	# #18
-		when "n"
-	# #19
-		when "d"
-		when "e"
-	# #20
-		when "m"
-			system "clear"
-			main_menu
-		else
-			system "clear"
-			puts "#{selection} is not a valid input"
-			entries_submenu(entry)
+		# #18
+			when "n"
+		# #19
+			when "d"
+			when "e"
+		# #20
+			when "m"
+				system "clear"
+				main_menu
+			else
+				system "clear"
+				puts "#{selection} is not a valid input"
+				entries_submenu(entry)
+
+	# #3
+			selection = gets.to_i
+			puts "You picked #{selection}"
+		end
 	end
 end
